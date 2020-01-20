@@ -18,3 +18,6 @@ cloudevent = { git = "https://github.com/openshift-cloud-functions/faas-rust-run
 [[bin]]
 name = "function"
 path = "src/main.rs"
+
+[build]
+target = "x86_64-unknown-linux-musl"
