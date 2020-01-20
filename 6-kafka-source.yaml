@@ -1,0 +1,13 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: KafkaSource
+metadata:
+  name: kafka-source
+spec:
+  consumerGroup: knative-group
+  bootstrapServers: my-cluster-kafka-bootstrap.kafka:9092
+  topics: demo
+  sink:
+    ref:
+      apiVersion: messaging.knative.dev/v1alpha1
+      kind: Channel
+      name: source-to-factorial
